@@ -5,6 +5,7 @@ A modern web application that allows users to chat with AI personas, including p
 ## 🌟 Features
 
 ### Core Features
+
 - **Pre-built Personas**: Chat with Hitesh Choudhary and Piyush Garg personas
 - **Custom Persona Creation**: Create your own AI personas with custom personalities, expertise, and communication styles
 - **Multi-LLM Support**: Integrate with OpenAI, Google Gemini, and Anthropic Claude
@@ -12,18 +13,21 @@ A modern web application that allows users to chat with AI personas, including p
 - **Real-time Chat**: Smooth, responsive chat interface with message history
 
 ### Persona Management
+
 - **Persona Profiles**: Each persona has detailed profiles including expertise, personality, and tone
 - **Dynamic Creation**: Easy-to-use form for creating custom personas
 - **Expertise Tags**: Add multiple areas of expertise for each persona
 - **Communication Style**: Define how each persona communicates and responds
 
 ### LLM Integration
+
 - **Multiple Providers**: Support for OpenAI GPT-4, Google Gemini Pro, and Claude
 - **API Key Management**: Secure storage and management of API keys
 - **Provider Switching**: Easily switch between different LLM providers
 - **Usage Monitoring**: Track API usage and rate limits
 
 ### User Experience
+
 - **Modern UI/UX**: Beautiful, intuitive interface built with Tailwind CSS
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Smooth Animations**: Framer Motion animations for enhanced user experience
@@ -32,19 +36,22 @@ A modern web application that allows users to chat with AI personas, including p
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 - API keys from your preferred LLM providers
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd persona-ai
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -53,6 +60,7 @@ A modern web application that allows users to chat with AI personas, including p
 
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
+
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    GOOGLE_API_KEY=your_google_api_key_here
@@ -60,6 +68,7 @@ A modern web application that allows users to chat with AI personas, including p
    ```
 
 4. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -67,6 +76,7 @@ A modern web application that allows users to chat with AI personas, including p
    ```
 
 5. **For production, build and start**
+
    ```bash
    npm run build
    npm run start
@@ -82,10 +92,12 @@ A modern web application that allows users to chat with AI personas, including p
 ### Setting Up LLM Providers
 
 1. **Open the Settings Modal**
+
    - Click the settings icon in the header
    - Navigate to the "LLM Providers" section
 
 2. **Add Your Provider**
+
    - Click "Add Provider"
    - Enter provider name (e.g., "OpenAI GPT-4")
    - Enter model name (e.g., "gpt-4")
@@ -99,6 +111,7 @@ A modern web application that allows users to chat with AI personas, including p
 ### Creating Custom Personas
 
 1. **Click "Create Custom Persona"**
+
    - Fill in the persona's name and description
    - Define their personality traits
    - Add areas of expertise
@@ -112,11 +125,12 @@ A modern web application that allows users to chat with AI personas, including p
 ## 📱 Usage Examples
 
 ### Chatting with Hitesh Choudhary
+
 ```
 User: "Can you help me learn React?"
-Hitesh: "Absolutely! I love helping developers learn React! 🚀 
+Hitesh: "Absolutely! I love helping developers learn React! 🚀
 
-Let me break this down in a practical way. React is all about building reusable components and managing state efficiently. 
+Let me break this down in a practical way. React is all about building reusable components and managing state efficiently.
 
 Start with the basics:
 1. JSX syntax
@@ -128,6 +142,7 @@ What's your current programming experience? This will help me tailor the explana
 ```
 
 ### Chatting with Piyush Garg
+
 ```
 User: "What's the best way to optimize a Next.js app?"
 Piyush: "Great question! Performance optimization in Next.js is crucial for user experience. Here are the key areas to focus on:
@@ -148,8 +163,9 @@ Would you like me to dive deeper into any of these areas?"
 ```
 
 ### Creating a Custom Persona
+
 ```
-Name: "Sarah Chen"
+Name: "Gwen Chen"
 Description: "UX/UI Designer and Frontend Developer"
 Personality: "Creative, detail-oriented, and passionate about user experience. Loves explaining design principles and helping developers understand the user perspective."
 Expertise: ["User Experience Design", "UI/UI Design", "Frontend Development", "Design Systems", "User Research"]
@@ -159,6 +175,7 @@ Tone: "Friendly, encouraging, and practical. Uses visual examples and real-world
 ## 🏗️ Architecture
 
 ### Frontend
+
 - **Next.js 14**: React framework with App Router
 - **TypeScript**: Type-safe development
 - **Tailwind CSS**: Utility-first CSS framework
@@ -167,11 +184,13 @@ Tone: "Friendly, encouraging, and practical. Uses visual examples and real-world
 - **React Hot Toast**: Toast notifications
 
 ### Backend
+
 - **Next.js API Routes**: Serverless API endpoints
 - **LLM Service Layer**: Abstraction for multiple AI providers
 - **Rate Limiting**: Built-in usage tracking and limits
 
 ### State Management
+
 - **Zustand Store**: Centralized state management
 - **Persistent Storage**: Local storage for user preferences
 - **Real-time Updates**: Reactive UI updates
@@ -195,27 +214,25 @@ The application includes built-in rate limiting to protect your API credits:
 ## 🎨 Customization
 
 ### Styling
+
 - **Tailwind CSS**: Easy to customize colors, spacing, and components
 - **CSS Variables**: Centralized color scheme management
 - **Component Library**: Reusable UI components
 
 ### Persona Templates
+
 - **Pre-built Templates**: Start with existing personas
 - **Custom Fields**: Add new fields to persona profiles
 - **Avatar Support**: Custom avatar images or generated initials
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Vercel
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Add environment variables
 4. Deploy automatically
-
-### Other Platforms
-- **Netlify**: Static site deployment
-- **AWS Amplify**: Full-stack deployment
-- **Docker**: Containerized deployment
 
 ## 🤝 Contributing
 
@@ -224,23 +241,6 @@ The application includes built-in rate limiting to protect your API credits:
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Hitesh Choudhary**: For inspiring the tech educator persona
-- **Piyush Garg**: For inspiring the developer persona
-- **OpenAI, Google, Anthropic**: For providing the LLM APIs
-- **Open Source Community**: For the amazing tools and libraries
-
-## 📞 Support
-
-- **Issues**: Create an issue on GitHub
-- **Discussions**: Use GitHub Discussions for questions
-- **Email**: Contact the maintainers directly
 
 ## 🔮 Future Roadmap
 
