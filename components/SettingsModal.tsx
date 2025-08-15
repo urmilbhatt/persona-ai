@@ -181,14 +181,12 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                             Edit
                           </button>
                           
-                          {provider.isCustom && (
-                            <button
-                              onClick={() => handleDeleteProvider(provider.id)}
-                              className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
-                            >
-                              <Trash2 size={20} />
-                            </button>
-                          )}
+                          <button
+                            onClick={() => handleDeleteProvider(provider.id)}
+                            className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
+                          >
+                            <Trash2 size={20} />
+                          </button>
                         </div>
                       </div>
 
@@ -200,8 +198,8 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                             <span className="ml-2 font-medium">{provider.usage.requestsThisHour}/{provider.rateLimit.requestsPerHour}</span>
                           </div>
                           <div>
-                            <span className="text-gray-500">Tokens/Hour:</span>
-                            <span className="ml-2 font-medium">{provider.usage.tokensThisHour}/{provider.rateLimit.tokensPerHour}</span>
+                            <span className="text-gray-500">Tokens/Minute:</span>
+                            <span className="ml-2 font-medium">{provider.usage.tokensThisMinute}/{provider.rateLimit.tokensPerMinute}</span>
                           </div>
                           <div>
                             <span className="text-gray-500">Status:</span>

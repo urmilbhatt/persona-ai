@@ -144,23 +144,20 @@ Remember: You ARE ${persona.name}. Respond as they would, not as an AI assistant
       throw new Error('Anthropic client not initialized');
     }
 
-    // Convert to Claude format
-    const claudeMessages = messages.map(msg => ({
-      role: msg.role === 'system' ? 'user' : msg.role,
-      content: msg.role === 'system' ? `System: ${msg.content}` : msg.content
-    }));
+    // Anthropic Claude expects a single prompt string
+    const prompt = messages.map(msg => `${msg.role === 'system' ? 'System' : msg.role}: ${msg.content}`).join('\n\n');
 
-    const message = await this.anthropic.messages.create({
+    const completion = await this.anthropic.completions.create({
       model: config.model,
-      max_tokens: config.maxTokens || 500,
+      max_tokens_to_sample: config.maxTokens || 500,
       temperature: config.temperature || 0.7,
-      messages: claudeMessages as any,
+      prompt,
     });
 
-    const content = message.content[0]?.text || '';
-    const tokensUsed = message.usage?.input_tokens + message.usage?.output_tokens || estimatedTokens;
+  const content = completion.completion || '';
+  const tokensUsed = estimatedTokens;
 
-    return { content, tokensUsed };
+  return { content, tokensUsed };
   }
 
   // Estimate token count for a message

@@ -35,7 +35,7 @@ interface AppState {
   addLLMProvider: (provider: LLMProvider) => void;
   updateLLMProvider: (id: string, updates: Partial<LLMProvider>) => void;
   deleteLLMProvider: (id: string) => void;
-  setActiveProvider: (provider: LLMProvider) => void;
+  setActiveProvider: (provider: LLMProvider | null) => void;
   
   setCreatingPersona: (isCreating: boolean) => void;
   setChatting: (isChatting: boolean) => void;
@@ -258,7 +258,7 @@ export const useStore = create<AppState>()(
           return false;
         }
 
-        if (provider.usage.tokensThisHour >= provider.rateLimit.tokensPerHour) {
+        if (provider.usage.tokensThisMinute >= provider.rateLimit.tokensPerMinute) {
           return false;
         }
 
@@ -273,7 +273,7 @@ export const useStore = create<AppState>()(
                 usage: {
                   ...p.usage,
                   requestsThisHour: p.usage.requestsThisHour + 1,
-                  tokensThisHour: p.usage.tokensThisHour + tokens,
+                  tokensThisMinute: p.usage.tokensThisMinute + tokens,
                 },
               }
             : p
@@ -284,7 +284,7 @@ export const useStore = create<AppState>()(
               usage: {
                 ...state.activeProvider.usage,
                 requestsThisHour: state.activeProvider.usage.requestsThisHour + 1,
-                tokensThisHour: state.activeProvider.usage.tokensThisHour + tokens,
+                tokensThisMinute: state.activeProvider.usage.tokensThisMinute + tokens,
               },
             }
           : state.activeProvider,
